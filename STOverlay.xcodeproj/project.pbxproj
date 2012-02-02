@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2441F56E14DA822400F3D64D /* STOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F56D14DA822400F3D64D /* STOverlayWindow.m */; };
+		2441F57214DA83E500F3D64D /* STOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F57114DA83E500F3D64D /* STOverlayView.m */; };
+		2441F57514DA954000F3D64D /* STOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F57414DA954000F3D64D /* STOverlayController.m */; };
+		249860FF14DA3AAB004D1710 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249860FE14DA3AAB004D1710 /* Cocoa.framework */; };
+		2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2498610714DA3AAB004D1710 /* InfoPlist.strings */; };
+		2498610B14DA3AAC004D1710 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2498610A14DA3AAB004D1710 /* main.m */; };
+		2498610F14DA3AAC004D1710 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2498610D14DA3AAC004D1710 /* Credits.rtf */; };
+		2498611214DA3AAC004D1710 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2498611114DA3AAC004D1710 /* AppDelegate.m */; };
+		2498611514DA3AAC004D1710 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2498611314DA3AAC004D1710 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2441F56C14DA822400F3D64D /* STOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOverlayWindow.h; sourceTree = "<group>"; };
+		2441F56D14DA822400F3D64D /* STOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOverlayWindow.m; sourceTree = "<group>"; };
+		2441F57014DA83E500F3D64D /* STOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOverlayView.h; sourceTree = "<group>"; };
+		2441F57114DA83E500F3D64D /* STOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOverlayView.m; sourceTree = "<group>"; };
+		2441F57314DA954000F3D64D /* STOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOverlayController.h; sourceTree = "<group>"; };
+		2441F57414DA954000F3D64D /* STOverlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOverlayController.m; sourceTree = "<group>"; };
+		249860FA14DA3AAB004D1710 /* STOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		249860FE14DA3AAB004D1710 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2498610114DA3AAB004D1710 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2498610214DA3AAB004D1710 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2498610314DA3AAB004D1710 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2498610614DA3AAB004D1710 /* STOverlay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "STOverlay-Info.plist"; sourceTree = "<group>"; };
+		2498610814DA3AAB004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2498610A14DA3AAB004D1710 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2498610C14DA3AAC004D1710 /* STOverlay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STOverlay-Prefix.pch"; sourceTree = "<group>"; };
+		2498610E14DA3AAC004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2498611014DA3AAC004D1710 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2498611114DA3AAC004D1710 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2498611414DA3AAC004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		249860F714DA3AAB004D1710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				249860FF14DA3AAB004D1710 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		249860EF14DA3AAA004D1710 = {
+			isa = PBXGroup;
+			children = (
+				2498610414DA3AAB004D1710 /* STOverlay */,
+				249860FD14DA3AAB004D1710 /* Frameworks */,
+				249860FB14DA3AAB004D1710 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		249860FB14DA3AAB004D1710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				249860FA14DA3AAB004D1710 /* STOverlay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		249860FD14DA3AAB004D1710 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				249860FE14DA3AAB004D1710 /* Cocoa.framework */,
+				2498610014DA3AAB004D1710 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2498610014DA3AAB004D1710 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2498610114DA3AAB004D1710 /* AppKit.framework */,
+				2498610214DA3AAB004D1710 /* CoreData.framework */,
+				2498610314DA3AAB004D1710 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2498610414DA3AAB004D1710 /* STOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				2498611014DA3AAC004D1710 /* AppDelegate.h */,
+				2498611114DA3AAC004D1710 /* AppDelegate.m */,
+				2441F56C14DA822400F3D64D /* STOverlayWindow.h */,
+				2441F56D14DA822400F3D64D /* STOverlayWindow.m */,
+				2441F57014DA83E500F3D64D /* STOverlayView.h */,
+				2441F57114DA83E500F3D64D /* STOverlayView.m */,
+				2441F57314DA954000F3D64D /* STOverlayController.h */,
+				2441F57414DA954000F3D64D /* STOverlayController.m */,
+				2498611314DA3AAC004D1710 /* MainMenu.xib */,
+				2498610514DA3AAB004D1710 /* Supporting Files */,
+			);
+			path = STOverlay;
+			sourceTree = "<group>";
+		};
+		2498610514DA3AAB004D1710 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2498610614DA3AAB004D1710 /* STOverlay-Info.plist */,
+				2498610714DA3AAB004D1710 /* InfoPlist.strings */,
+				2498610A14DA3AAB004D1710 /* main.m */,
+				2498610C14DA3AAC004D1710 /* STOverlay-Prefix.pch */,
+				2498610D14DA3AAC004D1710 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		249860F914DA3AAB004D1710 /* STOverlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2498611814DA3AAC004D1710 /* Build configuration list for PBXNativeTarget "STOverlay" */;
+			buildPhases = (
+				249860F614DA3AAB004D1710 /* Sources */,
+				249860F714DA3AAB004D1710 /* Frameworks */,
+				249860F814DA3AAB004D1710 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STOverlay;
+			productName = STOverlay;
+			productReference = 249860FA14DA3AAB004D1710 /* STOverlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		249860F114DA3AAA004D1710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 249860F414DA3AAA004D1710 /* Build configuration list for PBXProject "STOverlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 249860EF14DA3AAA004D1710;
+			productRefGroup = 249860FB14DA3AAB004D1710 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				249860F914DA3AAB004D1710 /* STOverlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		249860F814DA3AAB004D1710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */,
+				2498610F14DA3AAC004D1710 /* Credits.rtf in Resources */,
+				2498611514DA3AAC004D1710 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		249860F614DA3AAB004D1710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2498610B14DA3AAC004D1710 /* main.m in Sources */,
+				2498611214DA3AAC004D1710 /* AppDelegate.m in Sources */,
+				2441F56E14DA822400F3D64D /* STOverlayWindow.m in Sources */,
+				2441F57214DA83E500F3D64D /* STOverlayView.m in Sources */,
+				2441F57514DA954000F3D64D /* STOverlayController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2498610714DA3AAB004D1710 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2498610814DA3AAB004D1710 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2498610D14DA3AAC004D1710 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2498610E14DA3AAC004D1710 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2498611314DA3AAC004D1710 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2498611414DA3AAC004D1710 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2498611614DA3AAC004D1710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2498611714DA3AAC004D1710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2498611914DA3AAC004D1710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
+				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2498611A14DA3AAC004D1710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
+				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		249860F414DA3AAA004D1710 /* Build configuration list for PBXProject "STOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2498611614DA3AAC004D1710 /* Debug */,
+				2498611714DA3AAC004D1710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2498611814DA3AAC004D1710 /* Build configuration list for PBXNativeTarget "STOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2498611914DA3AAC004D1710 /* Debug */,
+				2498611A14DA3AAC004D1710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 249860F114DA3AAA004D1710 /* Project object */;
+}
