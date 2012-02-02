@@ -33,6 +33,10 @@
 }
 
 - (void)beginOverlayToView:(NSView *)targetView {
+    [self beginOverlayToView:targetView withLabel:@""];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label {
     _targetView = targetView;
     [targetView addObserver:self
                  forKeyPath:@"frame"
@@ -41,6 +45,7 @@
     NSWindow *parentWindow = _targetView.window;
     NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
+    [[_overlayWindow contentView] setLabel:label];
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
 }
 

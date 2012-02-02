@@ -28,4 +28,6 @@
 
 @interface STOverlayView : NSView
 
+@property (copy) NSString *label;
+
 @end
