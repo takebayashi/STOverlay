@@ -26,8 +26,11 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern CGFloat STOverlayViewStandardRadius;
+
 @interface STOverlayView : NSView
 
+@property CGFloat bezelRadius;
 @property (copy) NSString *label;
 
 @end

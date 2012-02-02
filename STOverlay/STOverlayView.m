@@ -26,20 +26,41 @@
 
 #import "STOverlayView.h"
 
+CGFloat STOverlayViewStandardRadius = 10.0;
+
 @interface STOverlayView ()
 
+- (void)drawBezel;
 - (void)drawLabel;
 
 @end
 
 @implementation STOverlayView
 
+@synthesize bezelRadius = _bezelRadius;
 @synthesize label = _label;
 
+- (id)initWithFrame:(NSRect)frameRect {
+    self = [super initWithFrame:frameRect];
+    if (self) {
+        self.bezelRadius = STOverlayViewStandardRadius;
+    }
+    return self;
+}
+
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor colorWithDeviceWhite:0.0 alpha:0.75] set];
-    NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
+    [self drawBezel];
     [self drawLabel];
+}
+
+- (void)drawBezel {
+    [[NSColor colorWithDeviceWhite:0.0 alpha:0.75] set];
+    NSRect bezelRect = self.bounds;
+    NSBezierPath *bezelPath = [NSBezierPath bezierPathWithRoundedRect:bezelRect
+                                                              xRadius:self.bezelRadius
+                                                              yRadius:self.bezelRadius];
+    [[NSGraphicsContext currentContext] setCompositingOperation:NSCompositeSourceOver];
+    [bezelPath fill];
 }
 
 - (void)drawLabel {
