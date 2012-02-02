@@ -30,6 +30,10 @@
 
 - (void)beginOverlayToView:(NSView *)targetView;
 - (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label;
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    offset:(CGFloat)offset
+                    radius:(CGFloat)radius;
 - (void)endOverlay;
 - (BOOL)isOverlay;
 

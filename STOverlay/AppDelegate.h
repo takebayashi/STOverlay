@@ -31,6 +31,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSView *targetView;
+@property (assign) IBOutlet NSSlider *offsetSlider;
+@property (assign) IBOutlet NSSlider *radiusSlider;
 @property (retain) STOverlayController *overlayController;
 
 - (IBAction)overlie:(id)sender;

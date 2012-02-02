@@ -26,6 +26,7 @@
 
 #import "STOverlayController.h"
 #import "STOverlayWindow.h"
+#import "STOverlayView.h"
 
 @implementation STOverlayController {
     STOverlayWindow *_overlayWindow;
@@ -37,6 +38,17 @@
 }
 
 - (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label {
+    [self beginOverlayToView:targetView
+                   withLabel:label
+                      offset:STOverlayViewStandardOffset
+                      radius:STOverlayViewStandardRadius];
+}
+
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    offset:(CGFloat)offset
+                    radius:(CGFloat)radius {
     _targetView = targetView;
     [targetView addObserver:self
                  forKeyPath:@"frame"
@@ -45,7 +57,10 @@
     NSWindow *parentWindow = _targetView.window;
     NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
-    [[_overlayWindow contentView] setLabel:label];
+    STOverlayView *overlayView = [_overlayWindow contentView];
+    overlayView.label = label;
+    overlayView.bezelOffset = offset;
+    overlayView.bezelRadius = radius;
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
 }
 
