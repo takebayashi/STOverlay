@@ -47,7 +47,7 @@
         [self.overlayController endOverlay];
     }
     else {
-        [self.overlayController beginOverlayToView:self.targetView];
+        [self.overlayController beginOverlayToView:self.targetView withLabel:@"Loading..."];
     }
 }
 

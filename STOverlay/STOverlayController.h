@@ -29,6 +29,7 @@
 @interface STOverlayController : NSObject
 
 - (void)beginOverlayToView:(NSView *)targetView;
+- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label;
 - (void)endOverlay;
 - (BOOL)isOverlay;
 
