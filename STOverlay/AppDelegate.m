@@ -30,6 +30,8 @@
 
 @synthesize window = _window;
 @synthesize targetView = _targetView;
+@synthesize offsetSlider = _offsetSlider;
+@synthesize radiusSlider = _radiusSlider;
 @synthesize overlayController = _overlayController;
 
 - (void)dealloc {
@@ -47,7 +49,10 @@
         [self.overlayController endOverlay];
     }
     else {
-        [self.overlayController beginOverlayToView:self.targetView withLabel:@"Loading..."];
+        [self.overlayController beginOverlayToView:self.targetView
+                                         withLabel:@"Loading..."
+                                            offset:self.offsetSlider.doubleValue
+                                            radius:self.radiusSlider.doubleValue];
     }
 }
 
