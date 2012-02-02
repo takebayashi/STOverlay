@@ -10,6 +10,7 @@
 		2441F56E14DA822400F3D64D /* STOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F56D14DA822400F3D64D /* STOverlayWindow.m */; };
 		2441F57214DA83E500F3D64D /* STOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F57114DA83E500F3D64D /* STOverlayView.m */; };
 		2441F57514DA954000F3D64D /* STOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F57414DA954000F3D64D /* STOverlayController.m */; };
+		2441F58F14DAEFCF00F3D64D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2441F58E14DAEFCF00F3D64D /* README.markdown */; };
 		249860FF14DA3AAB004D1710 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249860FE14DA3AAB004D1710 /* Cocoa.framework */; };
 		2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2498610714DA3AAB004D1710 /* InfoPlist.strings */; };
 		2498610B14DA3AAC004D1710 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2498610A14DA3AAB004D1710 /* main.m */; };
@@ -25,6 +26,7 @@
 		2441F57114DA83E500F3D64D /* STOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOverlayView.m; sourceTree = "<group>"; };
 		2441F57314DA954000F3D64D /* STOverlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STOverlayController.h; sourceTree = "<group>"; };
 		2441F57414DA954000F3D64D /* STOverlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STOverlayController.m; sourceTree = "<group>"; };
+		2441F58E14DAEFCF00F3D64D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		249860FA14DA3AAB004D1710 /* STOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		249860FE14DA3AAB004D1710 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2498610114DA3AAB004D1710 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,6 +57,7 @@
 		249860EF14DA3AAA004D1710 = {
 			isa = PBXGroup;
 			children = (
+				2441F58E14DAEFCF00F3D64D /* README.markdown */,
 				2498610414DA3AAB004D1710 /* STOverlay */,
 				249860FD14DA3AAB004D1710 /* Frameworks */,
 				249860FB14DA3AAB004D1710 /* Products */,
@@ -170,6 +173,7 @@
 				2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */,
 				2498610F14DA3AAC004D1710 /* Credits.rtf in Resources */,
 				2498611514DA3AAC004D1710 /* MainMenu.xib in Resources */,
+				2441F58F14DAEFCF00F3D64D /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
