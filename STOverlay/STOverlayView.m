@@ -26,11 +26,34 @@
 
 #import "STOverlayView.h"
 
+@interface STOverlayView ()
+
+- (void)drawLabel;
+
+@end
+
 @implementation STOverlayView
+
+@synthesize label = _label;
 
 - (void)drawRect:(NSRect)dirtyRect {
     [[NSColor colorWithDeviceWhite:0.0 alpha:0.75] set];
     NSRectFillUsingOperation(dirtyRect, NSCompositeSourceOver);
+    [self drawLabel];
+}
+
+- (void)drawLabel {
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [NSFont systemFontOfSize:48], NSFontAttributeName,
+                                [NSColor whiteColor], NSForegroundColorAttributeName,
+                                nil];
+    NSAttributedString *labelToDraw = [[NSAttributedString alloc] initWithString:self.label
+                                                                      attributes:attributes];
+    NSRect centeredRect;
+    centeredRect.size = labelToDraw.size;
+    centeredRect.origin.x = (self.bounds.size.width - centeredRect.size.width) / 2;
+    centeredRect.origin.y = (self.bounds.size.height - centeredRect.size.height) / 2;
+    [labelToDraw drawInRect:centeredRect];
 }
 
 @end
