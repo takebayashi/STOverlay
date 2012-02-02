@@ -72,16 +72,17 @@ CGFloat STOverlayViewStandardRadius = 10.0;
 
 - (void)drawLabel {
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [NSFont systemFontOfSize:48], NSFontAttributeName,
+                                [NSFont systemFontOfSize:48.0], NSFontAttributeName,
                                 [NSColor whiteColor], NSForegroundColorAttributeName,
                                 nil];
     NSAttributedString *labelToDraw = [[NSAttributedString alloc] initWithString:self.label
                                                                       attributes:attributes];
     NSRect centeredRect;
     centeredRect.size = labelToDraw.size;
-    centeredRect.origin.x = (self.bounds.size.width - centeredRect.size.width) / 2;
-    centeredRect.origin.y = (self.bounds.size.height - centeredRect.size.height) / 2;
+    centeredRect.origin.x = (self.bounds.size.width - centeredRect.size.width) / 2.0;
+    centeredRect.origin.y = (self.bounds.size.height - centeredRect.size.height) / 2.0;
     [labelToDraw drawInRect:centeredRect];
+    [labelToDraw release];
 }
 
 @end
