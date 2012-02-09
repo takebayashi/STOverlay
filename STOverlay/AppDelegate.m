@@ -34,14 +34,10 @@
 @synthesize radiusSlider = _radiusSlider;
 @synthesize overlayController = _overlayController;
 
-- (void)dealloc {
-    [_overlayController release];
-    [super dealloc];
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.overlayController = [[[STOverlayController alloc] init] autorelease];
+    self.overlayController = [[STOverlayController alloc] init];
 }
 
 - (IBAction)overlie:(id)sender {

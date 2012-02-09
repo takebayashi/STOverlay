@@ -48,7 +48,7 @@
         self.backgroundColor = [NSColor clearColor];
         self.alphaValue = 1;
         self.opaque = NO;
-        self.contentView = [[[STOverlayView alloc] initWithFrame:contentRect] autorelease];
+        self.contentView = [[STOverlayView alloc] initWithFrame:contentRect];
     }
     return self;
 }

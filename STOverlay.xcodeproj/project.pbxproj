@@ -270,6 +270,7 @@
 		2498611914DA3AAC004D1710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
 				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
@@ -281,6 +282,7 @@
 		2498611A14DA3AAC004D1710 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
 				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
