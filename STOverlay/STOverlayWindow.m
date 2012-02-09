@@ -27,7 +27,9 @@
 #import "STOverlayWindow.h"
 #import "STOverlayView.h"
 
-@implementation STOverlayWindow
+@implementation STOverlayWindow {
+    STOverlayView *_overlayView;
+}
 
 - (id)initWithContentRect:(NSRect)contentRect {
     return [self initWithContentRect:contentRect
@@ -48,9 +50,14 @@
         self.backgroundColor = [NSColor clearColor];
         self.alphaValue = 1;
         self.opaque = NO;
-        self.contentView = [[STOverlayView alloc] initWithFrame:contentRect];
+        _overlayView = [[STOverlayView alloc] initWithFrame:(NSRect){NSZeroPoint, contentRect.size}];
+        [self.contentView addSubview:_overlayView];
     }
     return self;
+}
+
+- (STOverlayView *)overlayView {
+    return _overlayView;
 }
 
 - (BOOL)canBecomeKeyWindow {
