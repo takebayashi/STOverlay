@@ -30,7 +30,7 @@
 
 @implementation STOverlayController {
     STOverlayWindow *_overlayWindow;
-    NSView *_targetView;
+    __weak NSView *_targetView;
 }
 
 - (void)beginOverlayToView:(NSView *)targetView {
@@ -57,6 +57,7 @@
     NSWindow *parentWindow = _targetView.window;
     NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
+    [_overlayWindow setReleasedWhenClosed:NO];
     STOverlayView *overlayView = [_overlayWindow contentView];
     overlayView.label = label;
     overlayView.bezelOffset = offset;
@@ -70,7 +71,6 @@
     [_overlayWindow close];
     _overlayWindow = nil;
     [_targetView removeObserver:self forKeyPath:@"frame"];
-    _targetView = nil;
 }
 
 - (BOOL)isOverlay {
