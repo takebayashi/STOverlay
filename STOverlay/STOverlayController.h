@@ -28,12 +28,14 @@
 
 @interface STOverlayController : NSObject
 
-- (void)beginOverlayToView:(NSView *)targetView;
-- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label;
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
-                    offset:(CGFloat)offset
-                    radius:(CGFloat)radius;
+                    radius:(CGFloat)radius
+                    offset:(CGFloat)offset;
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size;
 - (void)endOverlay;
 - (BOOL)isOverlay;
 

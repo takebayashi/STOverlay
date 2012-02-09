@@ -28,27 +28,18 @@
 #import "STOverlayWindow.h"
 #import "STOverlayView.h"
 
+@interface STOverlayController ()
+
+- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label radius:(CGFloat)radius;
+
+@end
+
 @implementation STOverlayController {
     STOverlayWindow *_overlayWindow;
     __weak NSView *_targetView;
 }
 
-- (void)beginOverlayToView:(NSView *)targetView {
-    [self beginOverlayToView:targetView withLabel:@""];
-}
-
-- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label {
-    [self beginOverlayToView:targetView
-                   withLabel:label
-                      offset:STOverlayViewStandardOffset
-                      radius:STOverlayViewStandardRadius];
-}
-
-
-- (void)beginOverlayToView:(NSView *)targetView
-                 withLabel:(NSString *)label
-                    offset:(CGFloat)offset
-                    radius:(CGFloat)radius {
+- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label radius:(CGFloat)radius {
     _targetView = targetView;
     [targetView addObserver:self
                  forKeyPath:@"frame"
@@ -58,11 +49,68 @@
     NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
     [_overlayWindow setReleasedWhenClosed:NO];
-    STOverlayView *overlayView = [_overlayWindow contentView];
+    STOverlayView *overlayView = [_overlayWindow overlayView];
     overlayView.label = label;
-    overlayView.bezelOffset = offset;
     overlayView.bezelRadius = radius;
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                    offset:(CGFloat)offset {
+    [self beginOverlayToView:targetView withLabel:label radius:radius];
+    NSDictionary *metrics = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:offset]
+                                                        forKey:@"offset"];
+    NSDictionary *views = [NSDictionary dictionaryWithObject:[_overlayWindow overlayView]
+                                                      forKey:@"overlayView"];
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(offset)-[overlayView]-(offset)-|"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(offset)-[overlayView]-(offset)-|"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [_overlayWindow.contentView addConstraints:constraints];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size {
+    [self beginOverlayToView:targetView withLabel:label radius:radius];
+    NSDictionary *metrics = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithFloat:size.width], @"width",
+                             [NSNumber numberWithFloat:size.height], @"height",
+                             nil];
+    STOverlayView *overlayView = [_overlayWindow overlayView];
+    NSDictionary *views = NSDictionaryOfVariableBindings(overlayView);
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"[overlayView(width)]"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[overlayView(height)]"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:overlayView
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_overlayWindow.contentView
+                                                        attribute:NSLayoutAttributeCenterX
+                                                       multiplier:1.0
+                                                         constant:0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:overlayView
+                                                        attribute:NSLayoutAttributeCenterY
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_overlayWindow.contentView
+                                                        attribute:NSLayoutAttributeCenterY
+                                                       multiplier:1.0
+                                                         constant:0]];
+    [_overlayWindow.contentView addConstraints:constraints];
 }
 
 - (void)endOverlay {

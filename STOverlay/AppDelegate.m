@@ -32,6 +32,8 @@
 @synthesize targetView = _targetView;
 @synthesize offsetSlider = _offsetSlider;
 @synthesize radiusSlider = _radiusSlider;
+@synthesize widthSlider = _widthSlider;
+@synthesize heightSlider = _heightSlider;
 @synthesize overlayController = _overlayController;
 
 
@@ -40,15 +42,27 @@
     self.overlayController = [[STOverlayController alloc] init];
 }
 
-- (IBAction)overlie:(id)sender {
+- (IBAction)overlay1:(id)sender {
     if (self.overlayController.isOverlay) {
         [self.overlayController endOverlay];
     }
     else {
         [self.overlayController beginOverlayToView:self.targetView
                                          withLabel:@"Loading..."
-                                            offset:self.offsetSlider.doubleValue
-                                            radius:self.radiusSlider.doubleValue];
+                                            radius:self.radiusSlider.doubleValue
+                                            offset:self.offsetSlider.doubleValue];
+    }
+}
+
+- (IBAction)overlay2:(id)sender {
+    if (self.overlayController.isOverlay) {
+        [self.overlayController endOverlay];
+    }
+    else {
+        [self.overlayController beginOverlayToView:self.targetView
+                                         withLabel:@"Loading..."
+                                            radius:self.radiusSlider.doubleValue
+                                              size:NSMakeSize(self.widthSlider.doubleValue, self.heightSlider.doubleValue)];
     }
 }
 
