@@ -26,8 +26,12 @@
 
 #import <AppKit/AppKit.h>
 
+@class STOverlayView;
+
 @interface STOverlayWindow : NSWindow
 
 - (id)initWithContentRect:(NSRect)contentRect;
+
+- (STOverlayView *)overlayView;
 
 @end

@@ -29,12 +29,15 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSView *targetView;
-@property (assign) IBOutlet NSSlider *offsetSlider;
-@property (assign) IBOutlet NSSlider *radiusSlider;
-@property (retain) STOverlayController *overlayController;
+@property (unsafe_unretained) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSView *targetView;
+@property (weak) IBOutlet NSSlider *offsetSlider;
+@property (weak) IBOutlet NSSlider *radiusSlider;
+@property (weak) IBOutlet NSSlider *widthSlider;
+@property (weak) IBOutlet NSSlider *heightSlider;
+@property (strong) STOverlayController *overlayController;
 
-- (IBAction)overlie:(id)sender;
+- (IBAction)overlay1:(id)sender;
+- (IBAction)overlay2:(id)sender;
 
 @end
