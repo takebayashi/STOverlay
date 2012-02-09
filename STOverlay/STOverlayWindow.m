@@ -50,7 +50,7 @@
         self.backgroundColor = [NSColor clearColor];
         self.alphaValue = 1;
         self.opaque = NO;
-        _overlayView = [[STOverlayView alloc] initWithFrame:(NSRect){NSZeroPoint, contentRect.size}];
+        _overlayView = [[STOverlayView alloc] initWithFrame:NSZeroRect];
         [self.contentView addSubview:_overlayView];
     }
     return self;

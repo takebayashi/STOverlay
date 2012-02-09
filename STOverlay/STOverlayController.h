@@ -32,6 +32,10 @@
                  withLabel:(NSString *)label
                     offset:(CGFloat)offset
                     radius:(CGFloat)radius;
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                      size:(NSSize)size
+                    radius:(CGFloat)radius;
 - (void)endOverlay;
 - (BOOL)isOverlay;
 

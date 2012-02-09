@@ -76,6 +76,40 @@
     [_overlayWindow.contentView addConstraints:constraints];
 }
 
+- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label size:(NSSize)size radius:(CGFloat)radius {
+    [self beginOverlayToView:targetView withLabel:label radius:radius];
+    NSDictionary *metrics = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithFloat:size.width], @"width",
+                             [NSNumber numberWithFloat:size.height], @"height",
+                             nil];
+    STOverlayView *overlayView = [_overlayWindow overlayView];
+    NSDictionary *views = NSDictionaryOfVariableBindings(overlayView);
+    NSMutableArray *constraints = [NSMutableArray array];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"[overlayView(width)]"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[overlayView(height)]"
+                                                                             options:0
+                                                                             metrics:metrics
+                                                                               views:views]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:overlayView
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_overlayWindow.contentView
+                                                        attribute:NSLayoutAttributeCenterX
+                                                       multiplier:1.0
+                                                         constant:0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:overlayView
+                                                        attribute:NSLayoutAttributeCenterY
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_overlayWindow.contentView
+                                                        attribute:NSLayoutAttributeCenterY
+                                                       multiplier:1.0
+                                                         constant:0]];
+    [_overlayWindow.contentView addConstraints:constraints];
+}
+
 - (void)endOverlay {
     NSWindow *parentWindow = _overlayWindow.parentWindow;
     [parentWindow removeChildWindow:_overlayWindow];
