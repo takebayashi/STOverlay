@@ -49,8 +49,8 @@
     else {
         [self.overlayController beginOverlayToView:self.targetView
                                          withLabel:@"Loading..."
-                                            offset:self.offsetSlider.doubleValue
-                                            radius:self.radiusSlider.doubleValue];
+                                            radius:self.radiusSlider.doubleValue
+                                            offset:self.offsetSlider.doubleValue];
     }
 }
 
@@ -61,8 +61,8 @@
     else {
         [self.overlayController beginOverlayToView:self.targetView
                                          withLabel:@"Loading..."
-                                              size:NSMakeSize(self.widthSlider.doubleValue, self.heightSlider.doubleValue)
-                                            radius:self.radiusSlider.doubleValue];
+                                            radius:self.radiusSlider.doubleValue
+                                              size:NSMakeSize(self.widthSlider.doubleValue, self.heightSlider.doubleValue)];
     }
 }
 

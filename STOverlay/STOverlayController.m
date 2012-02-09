@@ -57,8 +57,8 @@
 
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
-                    offset:(CGFloat)offset
-                    radius:(CGFloat)radius {
+                    radius:(CGFloat)radius
+                    offset:(CGFloat)offset {
     [self beginOverlayToView:targetView withLabel:label radius:radius];
     NSDictionary *metrics = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:offset]
                                                         forKey:@"offset"];
@@ -76,7 +76,10 @@
     [_overlayWindow.contentView addConstraints:constraints];
 }
 
-- (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label size:(NSSize)size radius:(CGFloat)radius {
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size {
     [self beginOverlayToView:targetView withLabel:label radius:radius];
     NSDictionary *metrics = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSNumber numberWithFloat:size.width], @"width",
