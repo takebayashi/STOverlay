@@ -82,7 +82,6 @@ CGFloat STOverlayViewStandardRadius = 10.0;
     centeredRect.origin.x = (self.bounds.size.width - centeredRect.size.width) / 2.0;
     centeredRect.origin.y = (self.bounds.size.height - centeredRect.size.height) / 2.0;
     [labelToDraw drawInRect:centeredRect];
-    [labelToDraw release];
 }
 
 @end
