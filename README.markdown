@@ -2,7 +2,7 @@
 
 ## What's this?
 
-STOverlay is a Cocoa classes for transparent overlay.
+STOverlay is a set of Cocoa classes for transparent overlay.
 
 ## Usage
 
@@ -11,8 +11,13 @@ STOverlay is a Cocoa classes for transparent overlay.
     // self.overlay is an instance of STOverlayController
     [self.overlayController beginOverlayToView:self.targetView
                                      withLabel:@"Loading..."
-                                        offset:20.0
-                                        radius:10.0];
+                                        radius:10.0
+                                        offset:20.0];
+    // or
+    [self.overlayController beginOverlayToView:self.targetView
+                                     withLabel:@"Loading..."
+                                          size:NSMakeSize(400.0, 200.0)
+                                        offset:20.0];
 }
 
 - (IBAction)endOverlay:(id)sender {
