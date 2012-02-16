@@ -46,7 +46,7 @@
                     options:NSKeyValueObservingOptionNew
                     context:NULL];
     NSWindow *parentWindow = _targetView.window;
-    NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
+    NSRect overlayRect = [parentWindow convertRectToScreen:[_targetView.superview convertRectToBacking:_targetView.frame]];
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
     [_overlayWindow setReleasedWhenClosed:NO];
     STOverlayView *overlayView = [_overlayWindow overlayView];
@@ -131,7 +131,7 @@
                        context:(void *)context {
     if ([keyPath isEqualToString:@"frame"] && object == _targetView) {
         NSWindow *parentWindow = _targetView.window;
-        NSRect overlayRect = [parentWindow convertRectToScreen:_targetView.frame];
+        NSRect overlayRect = [parentWindow convertRectToScreen:[_targetView.superview convertRectToBacking:_targetView.frame]];
         [_overlayWindow setFrame:overlayRect display:NO];
     }
 }
