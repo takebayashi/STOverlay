@@ -32,5 +32,7 @@ extern CGFloat STOverlayViewStandardRadius;
 
 @property CGFloat bezelRadius;
 @property (copy) NSString *label;
+@property (copy) NSFont *labelFont;
+@property (copy) NSColor *labelColor;
 
 @end

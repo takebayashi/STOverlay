@@ -28,6 +28,9 @@
 
 @interface STOverlayController : NSObject
 
+@property (strong, nonatomic) NSFont *labelFont;
+@property (strong, nonatomic) NSColor *labelColor;
+
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
                     radius:(CGFloat)radius

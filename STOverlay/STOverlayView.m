@@ -39,6 +39,7 @@ CGFloat STOverlayViewStandardRadius = 10.0;
 
 @synthesize bezelRadius = _bezelRadius;
 @synthesize label = _label;
+@synthesize labelFont = _labelFont, labelColor = _labelColor;
 
 - (id)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
@@ -65,8 +66,8 @@ CGFloat STOverlayViewStandardRadius = 10.0;
 
 - (void)drawLabel {
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [NSFont systemFontOfSize:48.0], NSFontAttributeName,
-                                [NSColor whiteColor], NSForegroundColorAttributeName,
+                                self.labelFont, NSFontAttributeName,
+                                self.labelColor, NSForegroundColorAttributeName,
                                 nil];
     NSAttributedString *labelToDraw = [[NSAttributedString alloc] initWithString:self.label
                                                                       attributes:attributes];

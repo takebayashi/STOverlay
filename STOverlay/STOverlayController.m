@@ -39,6 +39,19 @@
     __weak NSView *_targetView;
 }
 
+@synthesize labelColor = _labelColor, labelFont = _labelFont;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        //init label font and color properties
+        self.labelFont = [NSFont systemFontOfSize:48.0];
+        self.labelColor  = [NSColor redColor];
+    }
+    
+    return self;
+}
+
 - (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label radius:(CGFloat)radius {
     _targetView = targetView;
     [targetView addObserver:self
@@ -50,8 +63,12 @@
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
     [_overlayWindow setReleasedWhenClosed:NO];
     STOverlayView *overlayView = [_overlayWindow overlayView];
+    //configure label
     overlayView.label = label;
+    overlayView.labelColor = self.labelColor;
+    overlayView.labelFont = self.labelFont;
     overlayView.bezelRadius = radius;
+    
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
 }
 
