@@ -37,6 +37,7 @@
 @implementation STOverlayController {
     STOverlayWindow *_overlayWindow;
     __weak NSView *_targetView;
+    NSButton *closeButton;
 }
 
 @synthesize labelColor = _labelColor, labelFont = _labelFont;
@@ -69,6 +70,61 @@
     overlayView.labelFont = self.labelFont;
     overlayView.bezelRadius = radius;
     
+    if (closeButton) {
+        closeButton = nil;
+    }
+    
+    CGRect f = CGRectZero;
+    f.size.width = f.size.height = 24;
+    closeButton = [[NSButton alloc] initWithFrame:f];
+    closeButton.imagePosition = NSImageOnly;
+    closeButton.image = [NSImage imageNamed:@"close"];
+    closeButton.bezelStyle = NSShadowlessSquareBezelStyle;
+    [closeButton setBordered:YES];
+    closeButton.showsBorderOnlyWhileMouseInside = YES;
+    closeButton.action = @selector(closeButtonPressed:);
+    closeButton.target = self;
+    //[closeButton setAutoresizingMask:NSViewMinXMargin|NSViewMaxYMargin];
+    [overlayView addSubview:closeButton];
+    
+    /*
+    
+    NSMutableArray *constraints = [NSMutableArray array];
+    
+    [constraints addObjectsFromArray:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"[closeButton(24)]"
+                               options:0
+                               metrics:nil
+                               views:NSDictionaryOfVariableBindings(closeButton)]];
+    
+    [constraints addObjectsFromArray:[NSLayoutConstraint
+                                 constraintsWithVisualFormat:@"V:[closeButton(24)]"
+                                 options:0
+                                 metrics:nil
+                                 views:NSDictionaryOfVariableBindings(closeButton)]];
+     
+    
+
+    
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:closeButton
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:overlayView
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.0
+                                                         constant:0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:closeButton
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:overlayView
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1.0
+                                                         constant:0]];
+    
+    [overlayView addConstraints:constraints];
+     
+     */
+    
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
 }
 
@@ -82,6 +138,8 @@
     NSDictionary *views = [NSDictionary dictionaryWithObject:[_overlayWindow overlayView]
                                                       forKey:@"overlayView"];
     NSMutableArray *constraints = [NSMutableArray array];
+    
+    
     [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(offset)-[overlayView]-(offset)-|"
                                                                              options:0
                                                                              metrics:metrics
@@ -90,6 +148,7 @@
                                                                              options:0
                                                                              metrics:metrics
                                                                                views:views]];
+    
     [_overlayWindow.contentView addConstraints:constraints];
 }
 
@@ -138,6 +197,10 @@
     [_targetView removeObserver:self forKeyPath:@"frame"];
 }
 
+- (IBAction)closeButtonPressed:(id)sender {
+    [self endOverlay];
+}
+
 - (BOOL)isOverlay {
     return _overlayWindow != nil;
 }
@@ -150,6 +213,11 @@
         NSWindow *parentWindow = _targetView.window;
         NSRect overlayRect = [parentWindow convertRectToScreen:[_targetView.superview convertRectToBacking:_targetView.frame]];
         [_overlayWindow setFrame:overlayRect display:NO];
+        CGRect f = overlayRect;
+        f.origin.y = f.size.height - 24 - 6;
+        f.origin.x = f.size.width - 24 - 6;
+        f.size.width = f.size.height = 24;
+        closeButton.frame = f;
     }
 }
 

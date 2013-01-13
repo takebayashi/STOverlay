@@ -18,6 +18,8 @@
 		7D932BCA16A35AE300C45439 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BC216A35AE300C45439 /* MainMenu.xib */; };
 		7D932BCB16A35AE300C45439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D932BC416A35AE300C45439 /* main.m */; };
 		7D932BCC16A35AE300C45439 /* STOverlay-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BC516A35AE300C45439 /* STOverlay-Info.plist */; };
+		7D932BD116A3646400C45439 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BCF16A3646400C45439 /* close.png */; };
+		7D932BD216A3646400C45439 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BD016A3646400C45439 /* close@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		7D932BC416A35AE300C45439 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7D932BC516A35AE300C45439 /* STOverlay-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "STOverlay-Info.plist"; sourceTree = "<group>"; };
 		7D932BC616A35AE300C45439 /* STOverlay-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STOverlay-Prefix.pch"; sourceTree = "<group>"; };
+		7D932BCF16A3646400C45439 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		7D932BD016A3646400C45439 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		2498610414DA3AAB004D1710 /* STOverlay */ = {
 			isa = PBXGroup;
 			children = (
+				7D932BCE16A3646400C45439 /* Images */,
 				2441F56C14DA822400F3D64D /* STOverlayWindow.h */,
 				2441F56D14DA822400F3D64D /* STOverlayWindow.m */,
 				2441F57014DA83E500F3D64D /* STOverlayView.h */,
@@ -127,6 +132,15 @@
 				7D932BC616A35AE300C45439 /* STOverlay-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D932BCE16A3646400C45439 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7D932BCF16A3646400C45439 /* close.png */,
+				7D932BD016A3646400C45439 /* close@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +198,8 @@
 				7D932BC916A35AE300C45439 /* InfoPlist.strings in Resources */,
 				7D932BCA16A35AE300C45439 /* MainMenu.xib in Resources */,
 				7D932BCC16A35AE300C45439 /* STOverlay-Info.plist in Resources */,
+				7D932BD116A3646400C45439 /* close.png in Resources */,
+				7D932BD216A3646400C45439 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
