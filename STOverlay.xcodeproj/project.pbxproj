@@ -12,11 +12,12 @@
 		2441F57514DA954000F3D64D /* STOverlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2441F57414DA954000F3D64D /* STOverlayController.m */; };
 		2441F58F14DAEFCF00F3D64D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 2441F58E14DAEFCF00F3D64D /* README.markdown */; };
 		249860FF14DA3AAB004D1710 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 249860FE14DA3AAB004D1710 /* Cocoa.framework */; };
-		2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2498610714DA3AAB004D1710 /* InfoPlist.strings */; };
-		2498610B14DA3AAC004D1710 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2498610A14DA3AAB004D1710 /* main.m */; };
-		2498610F14DA3AAC004D1710 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2498610D14DA3AAC004D1710 /* Credits.rtf */; };
-		2498611214DA3AAC004D1710 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2498611114DA3AAC004D1710 /* AppDelegate.m */; };
-		2498611514DA3AAC004D1710 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2498611314DA3AAC004D1710 /* MainMenu.xib */; };
+		7D932BC716A35AE300C45439 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D932BBD16A35AE300C45439 /* AppDelegate.m */; };
+		7D932BC816A35AE300C45439 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BBE16A35AE300C45439 /* Credits.rtf */; };
+		7D932BC916A35AE300C45439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BC016A35AE300C45439 /* InfoPlist.strings */; };
+		7D932BCA16A35AE300C45439 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BC216A35AE300C45439 /* MainMenu.xib */; };
+		7D932BCB16A35AE300C45439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D932BC416A35AE300C45439 /* main.m */; };
+		7D932BCC16A35AE300C45439 /* STOverlay-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D932BC516A35AE300C45439 /* STOverlay-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,14 +33,14 @@
 		2498610114DA3AAB004D1710 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		2498610214DA3AAB004D1710 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2498610314DA3AAB004D1710 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2498610614DA3AAB004D1710 /* STOverlay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "STOverlay-Info.plist"; sourceTree = "<group>"; };
-		2498610814DA3AAB004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2498610A14DA3AAB004D1710 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2498610C14DA3AAC004D1710 /* STOverlay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STOverlay-Prefix.pch"; sourceTree = "<group>"; };
-		2498610E14DA3AAC004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		2498611014DA3AAC004D1710 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2498611114DA3AAC004D1710 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2498611414DA3AAC004D1710 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7D932BBC16A35AE300C45439 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7D932BBD16A35AE300C45439 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7D932BBF16A35AE300C45439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7D932BC116A35AE300C45439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D932BC316A35AE300C45439 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7D932BC416A35AE300C45439 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D932BC516A35AE300C45439 /* STOverlay-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "STOverlay-Info.plist"; sourceTree = "<group>"; };
+		7D932BC616A35AE300C45439 /* STOverlay-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STOverlay-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				2441F58E14DAEFCF00F3D64D /* README.markdown */,
+				7D932BBB16A35AE300C45439 /* SampleApp */,
 				2498610414DA3AAB004D1710 /* STOverlay */,
 				249860FD14DA3AAB004D1710 /* Frameworks */,
 				249860FB14DA3AAB004D1710 /* Products */,
@@ -94,28 +96,35 @@
 		2498610414DA3AAB004D1710 /* STOverlay */ = {
 			isa = PBXGroup;
 			children = (
-				2498611014DA3AAC004D1710 /* AppDelegate.h */,
-				2498611114DA3AAC004D1710 /* AppDelegate.m */,
 				2441F56C14DA822400F3D64D /* STOverlayWindow.h */,
 				2441F56D14DA822400F3D64D /* STOverlayWindow.m */,
 				2441F57014DA83E500F3D64D /* STOverlayView.h */,
 				2441F57114DA83E500F3D64D /* STOverlayView.m */,
 				2441F57314DA954000F3D64D /* STOverlayController.h */,
 				2441F57414DA954000F3D64D /* STOverlayController.m */,
-				2498611314DA3AAC004D1710 /* MainMenu.xib */,
-				2498610514DA3AAB004D1710 /* Supporting Files */,
 			);
 			path = STOverlay;
 			sourceTree = "<group>";
 		};
-		2498610514DA3AAB004D1710 /* Supporting Files */ = {
+		7D932BBB16A35AE300C45439 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				2498610614DA3AAB004D1710 /* STOverlay-Info.plist */,
-				2498610714DA3AAB004D1710 /* InfoPlist.strings */,
-				2498610A14DA3AAB004D1710 /* main.m */,
-				2498610C14DA3AAC004D1710 /* STOverlay-Prefix.pch */,
-				2498610D14DA3AAC004D1710 /* Credits.rtf */,
+				7D932BCD16A35AFE00C45439 /* Supporting Files */,
+				7D932BBC16A35AE300C45439 /* AppDelegate.h */,
+				7D932BBD16A35AE300C45439 /* AppDelegate.m */,
+				7D932BC216A35AE300C45439 /* MainMenu.xib */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		7D932BCD16A35AFE00C45439 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D932BBE16A35AE300C45439 /* Credits.rtf */,
+				7D932BC016A35AE300C45439 /* InfoPlist.strings */,
+				7D932BC416A35AE300C45439 /* main.m */,
+				7D932BC516A35AE300C45439 /* STOverlay-Info.plist */,
+				7D932BC616A35AE300C45439 /* STOverlay-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,10 +179,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2498610914DA3AAB004D1710 /* InfoPlist.strings in Resources */,
-				2498610F14DA3AAC004D1710 /* Credits.rtf in Resources */,
-				2498611514DA3AAC004D1710 /* MainMenu.xib in Resources */,
 				2441F58F14DAEFCF00F3D64D /* README.markdown in Resources */,
+				7D932BC816A35AE300C45439 /* Credits.rtf in Resources */,
+				7D932BC916A35AE300C45439 /* InfoPlist.strings in Resources */,
+				7D932BCA16A35AE300C45439 /* MainMenu.xib in Resources */,
+				7D932BCC16A35AE300C45439 /* STOverlay-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,37 +194,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2498610B14DA3AAC004D1710 /* main.m in Sources */,
-				2498611214DA3AAC004D1710 /* AppDelegate.m in Sources */,
 				2441F56E14DA822400F3D64D /* STOverlayWindow.m in Sources */,
 				2441F57214DA83E500F3D64D /* STOverlayView.m in Sources */,
 				2441F57514DA954000F3D64D /* STOverlayController.m in Sources */,
+				7D932BC716A35AE300C45439 /* AppDelegate.m in Sources */,
+				7D932BCB16A35AE300C45439 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2498610714DA3AAB004D1710 /* InfoPlist.strings */ = {
+		7D932BBE16A35AE300C45439 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2498610814DA3AAB004D1710 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2498610D14DA3AAC004D1710 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2498610E14DA3AAC004D1710 /* en */,
+				7D932BBF16A35AE300C45439 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		2498611314DA3AAC004D1710 /* MainMenu.xib */ = {
+		7D932BC016A35AE300C45439 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2498611414DA3AAC004D1710 /* en */,
+				7D932BC116A35AE300C45439 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7D932BC216A35AE300C45439 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D932BC316A35AE300C45439 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -272,8 +282,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
-				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
+				GCC_PREFIX_HEADER = "SampleApp/STOverlay-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/STOverlay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -284,8 +294,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "STOverlay/STOverlay-Prefix.pch";
-				INFOPLIST_FILE = "STOverlay/STOverlay-Info.plist";
+				GCC_PREFIX_HEADER = "SampleApp/STOverlay-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/STOverlay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
