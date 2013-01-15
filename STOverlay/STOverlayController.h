@@ -31,6 +31,8 @@
 @property (strong, nonatomic) NSFont *labelFont;
 @property (strong, nonatomic) NSColor *labelColor;
 
+@property (nonatomic) BOOL hasCloseButton;
+
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
                     radius:(CGFloat)radius
