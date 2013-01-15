@@ -37,9 +37,73 @@
 @implementation STOverlayController {
     STOverlayWindow *_overlayWindow;
     __weak NSView *_targetView;
+    NSButton *closeButton;
+}
+
+@synthesize labelColor = _labelColor, labelFont = _labelFont;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        //init label font, color and close button properties
+        self.labelFont = [NSFont systemFontOfSize:48.0];
+        self.labelColor  = [NSColor whiteColor];
+        self.hasCloseButton = YES;
+        self.closeButtonOffset = 8.0f;
+    }
+    
+    return self;
+}
+
+- (void)createCloseButtonInView:(NSView *)overlayView {
+    if (closeButton) {
+        closeButton = nil;
+    }
+    
+    CGRect f = CGRectZero;
+    f.size.width = f.size.height = 24;
+    closeButton = [[NSButton alloc] initWithFrame:f];
+    closeButton.imagePosition = NSImageOnly;
+    closeButton.image = [NSImage imageNamed:@"close"];
+    closeButton.bezelStyle = NSShadowlessSquareBezelStyle;
+    [closeButton setBordered:NO];
+    closeButton.showsBorderOnlyWhileMouseInside = YES;
+    [[closeButton cell] setHighlightsBy:NSChangeGrayCellMask];
+    
+    [closeButton setButtonType:NSMomentaryChangeButton];
+    
+    closeButton.action = @selector(closeButtonPressed:);
+    closeButton.target = self;
+    closeButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [overlayView addSubview:closeButton];
+    
+    //make button sits in top right corner
+    NSMutableArray *constraints = [NSMutableArray array];
+    
+    NSDictionary *metrics = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:self.closeButtonOffset]
+                                                        forKey:@"offset"];
+    
+    [constraints addObjectsFromArray:[NSLayoutConstraint
+                                      constraintsWithVisualFormat:@"[closeButton(24)]-(offset)-|"
+                                      options:0
+                                      metrics:metrics
+                                      views:NSDictionaryOfVariableBindings(closeButton)]];
+    
+    [constraints addObjectsFromArray:[NSLayoutConstraint
+                                      constraintsWithVisualFormat:@"V:|-(offset)-[closeButton(24)]"
+                                      options:0
+                                      metrics:metrics
+                                      views:NSDictionaryOfVariableBindings(closeButton)]];
+    
+    [overlayView addConstraints:constraints];
 }
 
 - (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label radius:(CGFloat)radius {
+    //if currently displayed, hide first
+    if ([self isOverlay]) {
+        [self endOverlay];
+    }
     _targetView = targetView;
     [targetView addObserver:self
                  forKeyPath:@"frame"
@@ -50,8 +114,17 @@
     _overlayWindow = [[STOverlayWindow alloc] initWithContentRect:overlayRect];
     [_overlayWindow setReleasedWhenClosed:NO];
     STOverlayView *overlayView = [_overlayWindow overlayView];
+    //configure label
     overlayView.label = label;
+    overlayView.labelColor = self.labelColor;
+    overlayView.labelFont = self.labelFont;
     overlayView.bezelRadius = radius;
+    
+    //create button if needed
+    if (self.hasCloseButton) {
+        [self createCloseButtonInView:overlayView];
+    }
+    
     [parentWindow addChildWindow:_overlayWindow ordered:NSWindowAbove];
 }
 
@@ -65,6 +138,8 @@
     NSDictionary *views = [NSDictionary dictionaryWithObject:[_overlayWindow overlayView]
                                                       forKey:@"overlayView"];
     NSMutableArray *constraints = [NSMutableArray array];
+    
+    
     [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(offset)-[overlayView]-(offset)-|"
                                                                              options:0
                                                                              metrics:metrics
@@ -73,7 +148,18 @@
                                                                              options:0
                                                                              metrics:metrics
                                                                                views:views]];
+    
     [_overlayWindow.contentView addConstraints:constraints];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                    offset:(CGFloat)offset
+                 hideAfter:(NSInteger)delay {
+    [self beginOverlayToView:targetView withLabel:label radius:radius offset:offset];
+    
+    [self hideOverlayAfter:delay];
 }
 
 - (void)beginOverlayToView:(NSView *)targetView
@@ -113,12 +199,34 @@
     [_overlayWindow.contentView addConstraints:constraints];
 }
 
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size
+                 hideAfter:(NSInteger)delay {
+    [self beginOverlayToView:targetView withLabel:label radius:radius size:size];
+    
+    [self hideOverlayAfter:delay];
+    
+}
+
+- (void)hideOverlayAfter:(NSInteger)delay {
+    //set timeout to hide view
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        [self endOverlay];
+    });
+}
+
 - (void)endOverlay {
     NSWindow *parentWindow = _overlayWindow.parentWindow;
     [parentWindow removeChildWindow:_overlayWindow];
     [_overlayWindow close];
     _overlayWindow = nil;
     [_targetView removeObserver:self forKeyPath:@"frame"];
+}
+
+- (IBAction)closeButtonPressed:(id)sender {
+    [self endOverlay];
 }
 
 - (BOOL)isOverlay {

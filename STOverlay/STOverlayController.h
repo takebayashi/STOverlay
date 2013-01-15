@@ -28,6 +28,12 @@
 
 @interface STOverlayController : NSObject
 
+@property (strong, nonatomic) NSFont *labelFont;
+@property (strong, nonatomic) NSColor *labelColor;
+
+@property (nonatomic) float hasCloseButton;
+@property (nonatomic) NSUInteger closeButtonOffset;
+
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
                     radius:(CGFloat)radius
@@ -35,7 +41,18 @@
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
                     radius:(CGFloat)radius
+                    offset:(CGFloat)offset
+                 hideAfter:(NSInteger)delay;
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
                       size:(NSSize)size;
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size
+                 hideAfter:(NSInteger)delay;
+
 - (void)endOverlay;
 - (BOOL)isOverlay;
 
