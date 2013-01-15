@@ -147,6 +147,16 @@
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label
                     radius:(CGFloat)radius
+                    offset:(CGFloat)offset
+                 hideAfter:(NSInteger)delay {
+    [self beginOverlayToView:targetView withLabel:label radius:radius offset:offset];
+    
+    [self hideOverlayAfter:delay];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
                       size:(NSSize)size {
     [self beginOverlayToView:targetView withLabel:label radius:radius];
     NSDictionary *metrics = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -179,6 +189,24 @@
                                                        multiplier:1.0
                                                          constant:0]];
     [_overlayWindow.contentView addConstraints:constraints];
+}
+
+- (void)beginOverlayToView:(NSView *)targetView
+                 withLabel:(NSString *)label
+                    radius:(CGFloat)radius
+                      size:(NSSize)size
+                 hideAfter:(NSInteger)delay {
+    [self beginOverlayToView:targetView withLabel:label radius:radius size:size];
+    
+    [self hideOverlayAfter:delay];
+    
+}
+
+- (void)hideOverlayAfter:(NSInteger)delay {
+    //set timeout to hide view
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_current_queue(), ^{
+        [self endOverlay];
+    });
 }
 
 - (void)endOverlay {
