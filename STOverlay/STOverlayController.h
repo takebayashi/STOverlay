@@ -31,7 +31,8 @@
 @property (strong, nonatomic) NSFont *labelFont;
 @property (strong, nonatomic) NSColor *labelColor;
 
-@property (nonatomic) BOOL hasCloseButton;
+@property (nonatomic) float hasCloseButton;
+@property (nonatomic) NSUInteger closeButtonOffset;
 
 - (void)beginOverlayToView:(NSView *)targetView
                  withLabel:(NSString *)label

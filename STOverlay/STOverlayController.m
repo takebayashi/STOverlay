@@ -45,10 +45,11 @@
 - (id)init {
     self = [super init];
     if (self) {
-        //init label font and color properties
+        //init label font, color and close button properties
         self.labelFont = [NSFont systemFontOfSize:48.0];
-        self.labelColor  = [NSColor redColor];
+        self.labelColor  = [NSColor whiteColor];
         self.hasCloseButton = YES;
+        self.closeButtonOffset = 8.0f;
     }
     
     return self;
@@ -80,16 +81,19 @@
     //make button sits in top right corner
     NSMutableArray *constraints = [NSMutableArray array];
     
+    NSDictionary *metrics = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:self.closeButtonOffset]
+                                                        forKey:@"offset"];
+    
     [constraints addObjectsFromArray:[NSLayoutConstraint
-                                      constraintsWithVisualFormat:@"[closeButton(24)]-6-|"
+                                      constraintsWithVisualFormat:@"[closeButton(24)]-(offset)-|"
                                       options:0
-                                      metrics:nil
+                                      metrics:metrics
                                       views:NSDictionaryOfVariableBindings(closeButton)]];
     
     [constraints addObjectsFromArray:[NSLayoutConstraint
-                                      constraintsWithVisualFormat:@"V:|-6-[closeButton(24)]"
+                                      constraintsWithVisualFormat:@"V:|-(offset)-[closeButton(24)]"
                                       options:0
-                                      metrics:nil
+                                      metrics:metrics
                                       views:NSDictionaryOfVariableBindings(closeButton)]];
     
     [overlayView addConstraints:constraints];
