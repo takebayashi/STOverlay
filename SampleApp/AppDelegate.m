@@ -43,27 +43,17 @@
 }
 
 - (IBAction)overlay1:(id)sender {
-    if (self.overlayController.isOverlay) {
-        [self.overlayController endOverlay];
-    }
-    else {
-        [self.overlayController beginOverlayToView:self.targetView
-                                         withLabel:@"Loading..."
-                                            radius:self.radiusSlider.doubleValue
-                                            offset:self.offsetSlider.doubleValue];
-    }
+    [self.overlayController beginOverlayToView:self.targetView
+                                     withLabel:@"Loading..."
+                                        radius:self.radiusSlider.doubleValue
+                                        offset:self.offsetSlider.doubleValue];
 }
 
 - (IBAction)overlay2:(id)sender {
-    if (self.overlayController.isOverlay) {
-        [self.overlayController endOverlay];
-    }
-    else {
-        [self.overlayController beginOverlayToView:self.targetView
-                                         withLabel:@"Loading..."
-                                            radius:self.radiusSlider.doubleValue
-                                              size:NSMakeSize(self.widthSlider.doubleValue, self.heightSlider.doubleValue)];
-    }
+    [self.overlayController beginOverlayToView:self.targetView
+                                     withLabel:@"Loading..."
+                                        radius:self.radiusSlider.doubleValue
+                                          size:NSMakeSize(self.widthSlider.doubleValue, self.heightSlider.doubleValue)];
 }
 
 @end

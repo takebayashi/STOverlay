@@ -96,6 +96,10 @@
 }
 
 - (void)beginOverlayToView:(NSView *)targetView withLabel:(NSString *)label radius:(CGFloat)radius {
+    //if currently displayed, hide first
+    if ([self isOverlay]) {
+        [self endOverlay];
+    }
     _targetView = targetView;
     [targetView addObserver:self
                  forKeyPath:@"frame"
